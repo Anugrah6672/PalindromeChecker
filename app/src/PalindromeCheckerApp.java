@@ -36,15 +36,16 @@ public class PalindromeCheckerApp {
     }
     public static boolean checkPalindrome(String s){
         char[] arr = new char[s.length()];
-        char[] rev = new char[s.length()];
         arr = s.toCharArray();
-        for (int i =0 ; i <s.length() ; i++)
-           rev[i] = arr[s.length()-1-i];
-               for(int i= 0; i<s.length();i++) {
-                   if (rev[i] == arr[i])
-                       continue;
-                   else
-                       return false;
+        int start =0;
+        int end =s.length()-1;
+        while(start<end){
+            if(arr[start]==arr[end]) {
+                start++;
+                end--;
+            }
+                else
+                    return false;
                }
         return true;
     }
