@@ -18,7 +18,7 @@ public class PalindromeCheckerApp {
      This use case introduces fundamental comparison logic
      before using advanced data structures.
 
-     @author Anugrah Shulka
+     @author Pushkar Rathi
      @version 2.0
      */
     public static void main(String[] args) {
@@ -36,13 +36,16 @@ public class PalindromeCheckerApp {
     }
     public static boolean checkPalindrome(String s){
         char[] arr = new char[s.length()];
+        char[] rev = new char[s.length()];
         arr = s.toCharArray();
-        for (int i = 0; i < s.length()/2; i++) {
-            if (arr[i] == arr[s.length()-i-1])
-                continue;
-            else
-                return false;
-        }
+        for (int i =0 ; i <s.length() ; i++)
+           rev[i] = arr[s.length()-1-i];
+               for(int i= 0; i<s.length();i++) {
+                   if (rev[i] == arr[i])
+                       continue;
+                   else
+                       return false;
+               }
         return true;
     }
 }
